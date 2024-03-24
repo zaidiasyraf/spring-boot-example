@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_test_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: test_container
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user_password
+
+volumes:
+  mysql_test_data:
